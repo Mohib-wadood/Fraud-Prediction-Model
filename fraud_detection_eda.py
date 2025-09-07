@@ -1,12 +1,15 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import joblib
-import time
-from io import StringIO
+try:
+    import streamlit as st
+    import pandas as pd
+    import numpy as np
+    import plotly.express as px
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
+    import joblib
+    from sklearn.ensemble import IsolationForest
+except ImportError as e:
+    st.error(f"Import error: {e}. Please make sure all dependencies are listed in requirements.txt")
+    st.stop()
 
 # Set page configuration
 st.set_page_config(
